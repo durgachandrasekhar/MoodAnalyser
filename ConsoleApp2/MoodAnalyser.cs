@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MoodAnalyzerAppwithCore
+namespace MoodAnalyserProblem
 {
     public class MoodAnalyser
     {
@@ -19,10 +19,22 @@ namespace MoodAnalyzerAppwithCore
         }
         public string AnalyserMethod()
         {
-            if (this.message.Contains("Happy"))
-                return "Sad";
-            else
-                return "Happy";
+            try
+            {
+
+                if (this.message.Contains("sad"))
+                {
+                    return "SAD";
+                }
+                else
+                    return "HAPPY";
+            }
+
+            catch
+            {
+                return "HAPPY";
+            }
+
         }
     }
 }
