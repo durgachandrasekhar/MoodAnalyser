@@ -22,17 +22,17 @@ namespace MoodAnalyserProblem
             try
             {
 
+                if (this.message.Equals(string.Empty))
+                    throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.EMPTY_MESSAGE, "mood should not be empty");
                 if (this.message.Contains("sad"))
-                {
                     return "SAD";
-                }
                 else
                     return "HAPPY";
             }
 
-            catch
+            catch (NullReferenceException)
             {
-                return "HAPPY";
+                throw new MoodAnalyserCustomException(MoodAnalyserCustomException.ExceptionType.NULL_MESSAGE, "mood should not be null");
             }
 
         }
